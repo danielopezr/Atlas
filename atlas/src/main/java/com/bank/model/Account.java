@@ -39,16 +39,16 @@ public class Account {
         return accountID;
     }
 
-    public void setAccountID(int number) {
-        this.number = number;
+    public void setAccountID(int accountID) {
+        this.accountID = accountID;
     }
 
     public int getNumber() {
         return number;
     }
 
-    public void setNumber(int accountID) {
-        this.accountID = accountID;
+    public void setNumber(int number) {
+        this.number = number;
     }
 
     public String getUsername() {

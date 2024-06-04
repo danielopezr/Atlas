@@ -2,7 +2,6 @@ package com.bank.controller;
 
 import com.bank.dao.AccountDAO;
 import com.bank.dao.TransactionDAO;
-import com.bank.dao.UserDAO;
 import com.bank.model.Account;
 import com.bank.model.Transaction;
 
@@ -24,7 +23,6 @@ public class TransactionServlet extends HttpServlet {
     private TransactionDAO transactionDAO;
 
     public TransactionServlet() {
-        this.userDAO = new UserDAO();
         this.accountDAO = new AccountDAO();
         this.transactionDAO = new TransactionDAO();
     }
@@ -43,15 +41,14 @@ public class TransactionServlet extends HttpServlet {
         double amount = Double.parseDouble(amountStr);
         String currency = request.getParameter("currency");
         String password = request.getParameter("password");
-
         double amountPesos = currencyManager.convertToPesos(amount, currency);
         double newBalance;
         double newBalanceDestination;
 
         String destinationAccountNumberStr = request.getParameter("number");
-        int destinationAccountNumber = 0;
         Account destinationAccount = account;
-        if (destinationAccountNumberStr != null) {
+        int destinationAccountNumber = -1;
+        if (type == 2 && destinationAccountNumberStr != null && !destinationAccountNumberStr.isEmpty()) {
             destinationAccountNumber = Integer.parseInt(destinationAccountNumberStr);
             destinationAccount = accountDAO.selectAccountByNumber(destinationAccountNumber); 
         }

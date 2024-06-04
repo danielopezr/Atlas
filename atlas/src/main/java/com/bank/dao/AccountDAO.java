@@ -106,6 +106,7 @@ public class AccountDAO {
             
             if (resultSet.next()) {
                 account = new Account();
+                account.setAccountID(resultSet.getInt("accountID"));
                 account.setNumber(number);
                 account.setUsername(resultSet.getString("username"));
                 account.setPassword(resultSet.getString("password"));
@@ -137,6 +138,7 @@ public class AccountDAO {
             
             if (resultSet.next()) {
                 account = new Account();
+                account.setAccountID(resultSet.getInt("accountID"));
                 account.setNumber(resultSet.getInt("number"));
                 account.setUsername(resultSet.getString("username"));
                 account.setPassword(resultSet.getString("password"));
@@ -210,6 +212,7 @@ public class AccountDAO {
             ResultSet resultSet = preparedStatement.executeQuery();
             if(resultSet.next()){
                 account = new Account();
+                account.setAccountID(resultSet.getInt("accountID"));
                 account.setNumber(resultSet.getInt("number"));
                 account.setUsername(resultSet.getString("username"));
                 account.setPassword(resultSet.getString("password"));
