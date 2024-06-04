@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Registro - Atlas</title>
+  <title>Transfer - Atlas</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -38,12 +38,12 @@
     <div class="container d-flex align-items-center justify-content-between">
 
       <div class="logo">
-        <h1 class="text-light"><a href="#">Atlas</a></h1>
+        <h1 class="text-light"><a href="index.jsp">Atlas</a></h1>
       </div>
 
       <nav id="navbar" class="navbar">
         <ul>
-          <li><a class="active" href="#">Home</a></li>
+          <li><a class="active" href="index.jsp">Home</a></li>
           <li class="dropdown"><a href="#"><span>Account</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
               <li><a href="profile.jsp">Profile</a></li>
@@ -51,7 +51,7 @@
               <li class="dropdown"><a href="#"><span>Funds Management</span> <i class="bi bi-chevron-right"></i></a>
                 <ul>
                   <li><a href="deposit.jsp">Deposit</a></li>
-                  <li><a href="tranfer.jsp">Transfer</a></li>
+                  <li><a href="#">Transfer</a></li>
                   <li><a href="withdrawal.jsp">Withdraw</a></li>
                 </ul>
               </li>
@@ -78,95 +78,50 @@
       <div class="breadcrumb-hero">
         <div class="container">
           <div class="breadcrumb-hero">
-            <h2>Registro</h2>
-            <p>Regístrate ahora para acceder a una amplia gama de servicios bancarios personalizados y disfrutar de beneficios exclusivos. Con nuestra plataforma segura y fácil de usar, podrás gestionar tus finanzas de manera eficiente y segura, desde cualquier lugar y en cualquier momento. </p>
+            <h2>Transfer</h2>
+            <p>Your financial future is in good hands. Log in and start taking advantage of all the benefits Atlas has to offer. </p>
           </div>
         </div>
       </div>
       <div class="container">
         <ol>
-          <li><a href="index.jsp">Inicio</a></li>
-          <li>Registro</li>
+          <li><a href="index.jsp">Home</a></li>
+          <li>Transfer</li>
         </ol>
       </div>
     </section><!-- End Breadcrumbs -->
 
-    <!-- ======= Register Section ======= -->
-    <section id="contact" class="contact">
-      <div class="container text-center">
-          
-        <div class="row mt-5">
+    <!-- ======= Transfer Section ======= -->
+    <section id="transfer" class="contact">
+      <div class="container">
 
-          <div class="col-lg-3" data-aos="fade-right">
-          </div>
+          <div class="col-lg-3 mt-5 mt-lg-0" data-aos="fade-left">
 
-          <div class="col-lg-6 mt-5 mt-lg-0" data-aos="fade-left">
-
-            <form action="register" method="post" class="php-email-form">
-              
-              <div class="row">
-                <div class="col-md-6 form-group">
-                  <label>Name</label>
-                  <input type="text" name="firstName" class="form-control" id="firstName" placeholder="First Name" required>
-                </div>
-                <div class="col-md-6 form-group mt-3 mt-md-0">
-                  <label> </label>
-                  <input type="text" class="form-control" name="middleName" id="middleName" placeholder="Middle Name" required>
-                </div>
-                <div class="col-md-6 form-group">
-                  <label>Last Name</label>
-                  <input type="text" name="lastName1" class="form-control" id="lastName1" placeholder="First Last Name" required>
-                </div>
-                <div class="col-md-6 form-group mt-3 mt-md-0">
-                  <label> </label>
-                  <input type="text" class="form-control" name="lastName2" id="lastName2" placeholder="Second Last Name" required>
-                </div>
-                <div class="col-md-6 form-group">
-                  <label>Identification</label>
-                  <input type="text" name="identification" class="form-control" id="identification" placeholder="Identification Number" pattern="[0-9]+" required>
-                </div>
-                <div class="col-md-6 form-group mt-3 mt-md-0">
-                  <label>Birth Date</label>
-                  <input type="date" class="form-control" name="birthDate" id="birthDate" placeholder="" required max="2006-12-31">
-                </div>
-                <div class="col-md-6 form-group">
-                  <label>Address</label>
-                  <input type="text" name="address" class="form-control" id="address" placeholder="Address" required>
-                </div>
-                <div class="col-md-6 form-group mt-3 mt-md-0">
-                  <label>Phone Number</label>
-                  <input type="number" class="form-control" name="phoneNumber" id="phoneNumber" placeholder="Phone number" pattern="[0-9]+" required>
-                </div>
-                <div class="form-group">
-                  <label for="username">Email</label>  
-                  <input type="text" name="email" class="form-control" id="email" placeholder="Your password" required>
-                </div>
-              </div>
+            <form action="transaction" method="post" role="form" class="php-email-form">
               <div class="row">
                 <div class="form-group">
-                  <label for="username">Username</label>  
-                  <input type="text" name="username" class="form-control" id="username" placeholder="Your password" required>
+                    <input type="hidden" name="type" value="2">
+                    <label for="number">Currency</label> 
+                    <select name="currency" class="form-control" id="currency" required>
+                        <option value="peso">Peso</option>
+                        <option value="dollar">Dollar</option>
+                        <option value="euro">Euro</option>
+                    </select>
+                  </div>
+                <div class="form-group" style="margin-bottom: 2%;">
+                  <label for="amount">Amount</label>
+                  <input type="text" name="amount" class="form-control" id="amount" placeholder="$" required>
                 </div>
                 <div class="form-group">
-                  <label for="password">Password</label>  
-                  <input type="password" name="password" class="form-control" id="password" placeholder="Password" required>
-                  <input type="hidden" name="type" id="type" value="">
-                  <script>
-                    // Obtener el valor del parámetro 'type' de la URL
-                    var urlParams = new URLSearchParams(window.location.search);
-                    var typeValue = urlParams.get('type');
-                    
-                    // Asignar el valor al campo oculto
-                    document.getElementById('type').value = typeValue;
-                  </script>
+                  <label for="number">Destination</label>  
+                  <input type="text" name="number" class="form-control" id="number" placeholder="Destination account number" required>
+                </div>
+                <div class="form-group" style="margin-bottom: 3%;">
+                    <label for="number">Confirm Password</label>  
+                    <input type="password" name="password" class="form-control" id="password" placeholder="Password" required>
                 </div>
               </div>
-              <div class="my-3">
-                <div class="loading">Loading</div>
-                <div class="error-message"></div>
-                <div class="sent-message">Your message has been sent. Thank you!</div>
-              </div>
-              <div class="text-center"><button type="submit">Crear</button></div>
+              <div class="text-center"><button type="submit">Transfer</button></div>
             </form>
 
           </div>
@@ -174,7 +129,7 @@
         </div>
 
       </div>
-    </section><!-- End Contact Section -->
+    </section><!-- End Transfer Section -->
 
   </main><!-- End #main -->
 
@@ -220,8 +175,8 @@
           </div>
 
           <div class="col-lg-3 col-md-6 footer-newsletter">
-            <h4> Our Newsletter</h4>
-            <p> Tamen quem nulla quae legam multos aute sint culpa legam noster magna veniam enim veniam illum dolore legam minim quorum culpa amet magna export quem marada parida nodela caramase seza.</p>
+            <h4>Our Newsletter</h4>
+            <p>Tamen quem nulla quae legam multos aute sint culpa legam noster magna veniam enim veniam illum dolore legam minim quorum culpa amet magna export quem marada parida nodela caramase seza.</p>
             <form action="" method="post">
               <input type="email" name="email"><input type="submit" value="Subscribe">
             </form>
@@ -233,14 +188,7 @@
 
     <div class="container">
       <div class="copyright">
-        &copy; Copyright <strong><span>Serenity</span></strong>. All Rights Reserved
-      </div>
-      <div class="credits">
-        <!-- All the links in the footer should remain intact. -->
-        <!-- You can delete the links only if you purchased the pro version. -->
-        <!-- Licensing information: https://bootstrapmade.com/license/ -->
-        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/serenity-bootstrap-corporate-template/ -->
-        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+        &copy; Copyright <strong><span>Atlas</span></strong>. All Rights Reserved - 2024
       </div>
     </div>
   </footer><!-- End Footer -->
@@ -258,7 +206,6 @@
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
-  <script src="assets/js/URLParams.js"></script>
 
 </body>
 

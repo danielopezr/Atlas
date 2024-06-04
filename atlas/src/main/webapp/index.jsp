@@ -44,26 +44,24 @@
       <nav id="navbar" class="navbar">
         <ul>
           <li><a class="active" href="#">Home</a></li>
-          <li class="dropdown"><a href="#"><span>About</span> <i class="bi bi-chevron-down"></i></a>
+          <li class="dropdown"><a href="#"><span>Account</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
-              <li><a href="about.html">About</a></li>
-              <li><a href="team.html">Team</a></li>
-              <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>
+              <li><a href="profile.jsp">Profile</a></li>
+              <li><a href="#"></a></li>
+              <li class="dropdown"><a href="#"><span>Funds Management</span> <i class="bi bi-chevron-right"></i></a>
                 <ul>
-                  <li><a href="#">Deep Drop Down 1</a></li>
-                  <li><a href="#">Deep Drop Down 2</a></li>
-                  <li><a href="#">Deep Drop Down 3</a></li>
-                  <li><a href="#">Deep Drop Down 4</a></li>
-                  <li><a href="#">Deep Drop Down 5</a></li>
+                  <li><a href="deposit.jsp">Deposit</a></li>
+                  <li><a href="tranfer.jsp">Transfer</a></li>
+                  <li><a href="withdrawal.jsp">Withdraw</a></li>
                 </ul>
               </li>
             </ul>
           </li>
-          <li><a href="services.html">Services</a></li>
+          <li><a href="#">Services</a></li>
           <li><a href="plans.jsp">Plans</a></li>
-          <li><a href="portfolio.html">Portfolio</a></li>
-          <li><a href="blog.html">Blog</a></li>
-          <li><a href="contact.html">Contact</a></li>
+          <li><a href="#">Portfolio</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="contact.jsp">Contact</a></li>
 
           <li><a class="getstarted" href="login.jsp">Log In</a></li>
         </ul>

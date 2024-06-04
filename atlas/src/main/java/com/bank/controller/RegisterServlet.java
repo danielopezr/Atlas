@@ -38,7 +38,7 @@ public class RegisterServlet extends HttpServlet {
         LocalDate localDate = LocalDate.parse(birthDateStr);
         Date birthDate = Date.valueOf(localDate);
 
-        String adress = request.getParameter("adress");
+        String address = request.getParameter("address");
         String phoneNumber = request.getParameter("phoneNumber");
         String email = request.getParameter("email");
         String identification = request.getParameter("identification");
@@ -62,7 +62,7 @@ public class RegisterServlet extends HttpServlet {
             request.setAttribute("message", "The selected username is in used, please try other one");
             request.getRequestDispatcher("register.jsp").forward(request, response);
         } else {
-            User newUser = new User(firstName, middleName, lastName1, lastName2, birthDate, adress, phoneNumber, email, identification);
+            User newUser = new User(firstName, middleName, lastName1, lastName2, birthDate, address, phoneNumber, email, identification);
             userDAO.insertUser(newUser);
             int userID = userDAO.getUserByIdentification(identification);
 

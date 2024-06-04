@@ -38,34 +38,32 @@
     <div class="container d-flex align-items-center justify-content-between">
 
       <div class="logo">
-        <h1 class="text-light"><a href="index.jsp">Atlas</a></h1>
+        <h1 class="text-light"><a href="#">Atlas</a></h1>
       </div>
 
       <nav id="navbar" class="navbar">
         <ul>
-          <li><a href="index.html">Home</a></li>
-          <li class="dropdown"><a href="#"><span>About</span> <i class="bi bi-chevron-down"></i></a>
+          <li><a class="active" href="#">Home</a></li>
+          <li class="dropdown"><a href="#"><span>Account</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
-              <li><a href="about.html">About</a></li>
-              <li><a href="team.html">Team</a></li>
-              <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>
+              <li><a href="profile.jsp">Profile</a></li>
+              <li><a href="#"></a></li>
+              <li class="dropdown"><a href="#"><span>Funds Management</span> <i class="bi bi-chevron-right"></i></a>
                 <ul>
-                  <li><a href="#">Deep Drop Down 1</a></li>
-                  <li><a href="#">Deep Drop Down 2</a></li>
-                  <li><a href="#">Deep Drop Down 3</a></li>
-                  <li><a href="#">Deep Drop Down 4</a></li>
-                  <li><a href="#">Deep Drop Down 5</a></li>
+                  <li><a href="deposit.jsp">Deposit</a></li>
+                  <li><a href="tranfer.jsp">Transfer</a></li>
+                  <li><a href="withdrawal.jsp">Withdraw</a></li>
                 </ul>
               </li>
             </ul>
           </li>
-          <li><a href="services.html">Services</a></li>
-          <li><a href="plans.html">Plans</a></li>
-          <li><a href="portfolio.html">Portfolio</a></li>
-          <li><a href="blog.html">Blog</a></li>
-          <li><a class="active" href="contact.html">Contact</a></li>
+          <li><a href="#">Services</a></li>
+          <li><a href="plans.jsp">Plans</a></li>
+          <li><a href="#">Portfolio</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="contact.jsp">Contact</a></li>
 
-          <li><a class="getstarted" href="#">Log In</a></li>
+          <li><a class="getstarted" href="login.jsp">Log In</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
@@ -114,7 +112,7 @@
                   <a href="plans.jsp"> Sign Up</a>
                 </div>
               </div>
-              <div class="text-center"><button type="submit">Continuar</button></div>
+              <div class="text-center"><button type="submit">Continue</button></div>
             </form>
 
           </div>
@@ -181,10 +179,7 @@
 
     <div class="container">
       <div class="copyright">
-        &copy; Copyright <strong><span>Serenity</span></strong>. All Rights Reserved
-      </div>
-      <div class="credits">
-        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+        &copy; Copyright <strong><span>Atlas</span></strong>. All Rights Reserved - 2024
       </div>
     </div>
   </footer><!-- End Footer -->

@@ -1,9 +1,7 @@
 package com.bank.controller;
 
 import com.bank.dao.AccountDAO;
-import com.bank.dao.UserDAO;
 import com.bank.model.Account;
-import com.bank.model.User;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -16,11 +14,9 @@ import java.io.IOException;
 @WebServlet("/login")
 public class LoginServlet extends HttpServlet {
     private AccountDAO accountDAO;
-    private UserDAO userDAO;
 
     public LoginServlet() {
         this.accountDAO = new AccountDAO();
-        this.userDAO = new UserDAO();
     }
 
     //GET, UPDATE, POST, DELETE son métodos HTTP
@@ -35,10 +31,8 @@ public class LoginServlet extends HttpServlet {
             System.out.println("Contraseña incorrecta");
             request.getRequestDispatcher("login.jsp").forward(request, response);
         } else {
-            User user = userDAO.selectUserByID(account.getUserID());
-
             HttpSession session = request.getSession();
-            session.setAttribute("user", user);
+            session.setAttribute("account", account);
             response.sendRedirect("index.jsp");
         }
     }

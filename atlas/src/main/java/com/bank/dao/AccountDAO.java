@@ -17,6 +17,7 @@ public class AccountDAO {
     private static final String UPDATE_ACCOUNT = "UPDATE account SET username = ?," + "password = ?," +
                                                                     "type = ?," + "balance = ?," + "openDate = ?," +
                                                                     "cancelDate = ?," + "status = ?," + "WHERE number = ?";
+    private static final String UPDATE_BALANCE = "UPDATE account SET balance = ? WHERE number = ?";
     private static final String DELETE_ACCOUNT = "DELETE FROM account WHERE number = ?";
     private static final String SELECT_ACCOUNT_USER_ID = "SELECT * FROM account WHERE userID = ?";
     private static final String SELECT_ACCOUNT_NUMBER = "SELECT * FROM account WHERE number = ?";
@@ -61,6 +62,21 @@ public class AccountDAO {
             System.out.println("datos de cuenta actualizados exitosamente a la base de datos");
         } catch (SQLException e) {
             System.out.println("Error al actualizar datos de cuenta: " + e.getMessage());
+        } finally {
+            DBConnection.closeConnection(connection);
+        }
+    }
+
+    public void updateBalance(int accountNumber, double newBalance) throws SQLException {
+        Connection connection = DBConnection.getConnection();
+
+        try (PreparedStatement preparedStatement = connection.prepareStatement(UPDATE_BALANCE)) {
+            preparedStatement.setDouble(1, newBalance);
+            preparedStatement.setInt(2, accountNumber);
+            preparedStatement.executeUpdate();
+            System.out.println("Balance actualizado exitosamente en la base de datos para la cuenta número " + accountNumber);
+        } catch (SQLException e) {
+            System.out.println("Error: No se pudo actualizar el balance para la cuenta número " + accountNumber);
         } finally {
             DBConnection.closeConnection(connection);
         }
@@ -140,6 +156,26 @@ public class AccountDAO {
         }
 
         return account;
+    }
+
+    public boolean accountExistsByNumber(int number) {
+        Connection connection = DBConnection.getConnection();
+        
+        try (PreparedStatement preparedStatement = connection.prepareStatement(SELECT_ACCOUNT_NUMBER)) {
+            preparedStatement.setInt(1, number);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            
+            if (resultSet.next()) {
+                System.out.println("Cuenta encontrada exitosamente");
+                return true;
+            }
+        } catch (SQLException e) {
+            System.out.println("Error al buscar la cuenta: " + e.getMessage());
+        } finally {
+            DBConnection.closeConnection(connection);
+        }
+        
+        return false;
     }
     
     public boolean userNameInUse(String username) {

@@ -11,11 +11,11 @@ import com.bank.model.User;
 public class UserDAO {
 
     private static final String INSERT_USER = "INSERT INTO user (firstName," + "middleName," + "lastName1," + "lastName2," + 
-                                                                    "birthDate," + "adress," + "phoneNumber," + "email," +
+                                                                    "birthDate," + "address," + "phoneNumber," + "email," +
                                                                     "identification," + "isAdmin) " + "VALUES " +
                                                                     "(?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
     private static final String UPDATE_USER = "UPDATE user SET firstName = ?," + "middleName = ?," + "lastName1 = ?," +
-                                                                    "lastName2 = ?," + "birthDate = ?," + "adress = ?," +
+                                                                    "lastName2 = ?," + "birthDate = ?," + "address = ?," +
                                                                     "phoneNumber = ?," + "email = ?," + "identification = ?," +
                                                                     "isAdmin = ?," + "WHERE userID = ?";
     private static final String DELETE_USER = "DELETE FROM user WHERE userID = ?";
